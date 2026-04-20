@@ -186,7 +186,8 @@ function generateReply(type,priority){
 }else if(type.includes("Urgence")){
   core=urgentReplyByProfile(state.profile);
 }else if(type.includes("incohérence")||type.includes("Réclamation / incohérence")){
-  }else if(type.includes("Devis")){
+  core=sensitiveAdminReplyByProfile(state.profile);
+}else if(type.includes("Devis")){
     core="Merci pour votre demande. Je vais analyser les éléments transmis afin de vous apporter une réponse adaptée.\n\nAfin de préparer une proposition pertinente, pouvez-vous me préciser le périmètre exact de votre besoin, le délai souhaité et les éventuelles contraintes à prendre en compte ?";
   }else if(type.includes("Facturation")){
     core="Merci pour votre message. Je prends bonne note de votre demande concernant la facturation.\n\nPouvez-vous me confirmer la référence de la facture ou du dossier concerné afin que je puisse vérifier les éléments et revenir vers vous avec une réponse précise ?";
