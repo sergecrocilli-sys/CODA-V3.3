@@ -205,6 +205,22 @@ function generateReply(type,priority){
   return `${getIntro()}\n\n${core}\n\n${getClosing()}\n${state.signature}`.trim();
 }
 
+function positiveFeedbackReplyByProfile(profile){
+  if(profile==="commerce"){
+    return"Merci beaucoup pour votre message et pour votre retour positif.\n\nNous sommes ravis de savoir que vous êtes satisfait de votre expérience et de la qualité de l’accompagnement apporté.\n\nVotre retour est très apprécié par l’équipe, car nous accordons beaucoup d’importance à l’accueil, au conseil et à la qualité du service rendu.\n\nAu plaisir de vous revoir prochainement.";
+  }
+
+  if(profile==="artisan"){
+    return"Merci beaucoup pour votre message et pour votre retour positif.\n\nJe suis ravi de savoir que l’intervention et l’accompagnement apportés vous ont donné satisfaction.\n\nVotre retour est très apprécié et m’encourage à poursuivre dans cette qualité de service.\n\nAu plaisir de vous accompagner à nouveau si besoin.";
+  }
+
+  if(profile==="industrie"){
+    return"Merci beaucoup pour votre message et pour votre retour positif.\n\nJe suis ravi de savoir que l’accompagnement apporté a répondu à vos attentes.\n\nVotre retour est très apprécié, car nous accordons beaucoup d’importance à la qualité du suivi, à la réactivité et à la pertinence des solutions proposées.\n\nAu plaisir de poursuivre nos échanges.";
+  }
+
+  return"Merci beaucoup pour votre message et pour votre retour positif.\n\nJe suis ravi de savoir que l’accompagnement apporté vous a donné satisfaction.\n\nVotre message est très apprécié et m’encourage à poursuivre dans cette qualité de service.\n\nAu plaisir d’échanger à nouveau avec vous.";
+}
+
 function urgentReplyByProfile(profile){
   switch(profile){
     case"industrie":return"Merci pour votre message. Je prends bien en compte le caractère bloquant de la situation.\n\nAfin de qualifier rapidement la demande, pouvez-vous me transmettre la référence de l’équipement, la ligne concernée, le message d’erreur affiché et l’impact actuel sur la production ?\n\nDès réception de ces éléments, je reviens vers vous pour organiser la suite.";
