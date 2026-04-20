@@ -78,7 +78,10 @@ function detectType(subject,body){
   if(containsAny(text,["reclamation","litige","insatisfait","pas satisfait","déçu","probleme","mécontent"]))return"Réclamation";
   if(containsAny(text,["devis","offre","prix","tarif","chiffrage","proposition"]))return"Demande de devis";
   if(containsAny(text,["facture","reglement","paiement","relance","comptabilite"]))return"Facturation / administratif";
-  if(containsAny(text,["rendez-vous","rendez vous","rdv","creneau","disponibilite"]))return"Rendez-vous / planification";
+  if(containsAny(text,["rendez-vous","rendez vous","rdv","creneau","prendre rendez-vous","prendre rendez vous","fixer un rendez-vous","fixer un rendez vous","vos disponibilites",
+  "mes disponibilites",
+  "quelles sont vos disponibilites"
+]))return"Rendez-vous / planification";
   if(containsAny(text,["document","piece jointe","attestation","contrat","dossier"]))return"Demande de documents";
 
   if(containsAny(text,[
