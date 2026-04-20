@@ -73,41 +73,36 @@ function containsAny(text,words){
 function detectType(subject,body){
   const text=normalizeText(subject+" "+body);
 
-  if(containsAny(text,[
-  "merci",
-  "remercier",
-  "remerciement",
-  "satisfait",
-  "tres satisfait",
-  "content",
-  "ravi",
-  "excellent",
-  "parfait",
-  "tres bien",
-  "qualite de service",
-  "qualite de votre accompagnement",
-  "professionnalisme",
-  "disponibilite",
-  "reactivite",
-  "patience",
-  "ecoute",
-  "conseil",
-  "accompagnement",
-  "service client",
-  "bon accueil",
-  "travail soigne",
-  "intervention efficace",
-  "resultat conforme",
-  "je recommande"
-]))return"Remerciement / retour positif";
-
   if(containsAny(text,["urgence","urgent","douleur","fuite","panne","arret","bloque","incident","sinistre"]))return"Urgence / situation bloquante";
   if(containsAny(text,["incoherence","ecart","erreur","retard","consequence","probleme comptable","rapprochement bancaire"]))return"Réclamation / incohérence administrative";
+  if(containsAny(text,["reclamation","mecontent","litige","insatisfait","pas satisfait","decu","déçu","probleme","mécontent"]))return"Réclamation";
   if(containsAny(text,["devis","offre","prix","tarif","chiffrage","proposition"]))return"Demande de devis";
   if(containsAny(text,["facture","reglement","paiement","relance","comptabilite"]))return"Facturation / administratif";
   if(containsAny(text,["rendez-vous","rendez vous","rdv","creneau","disponibilite"]))return"Rendez-vous / planification";
-  if(containsAny(text,["reclamation","mecontent","litige","insatisfait"]))return"Réclamation";
   if(containsAny(text,["document","piece jointe","attestation","contrat","dossier"]))return"Demande de documents";
+
+  if(containsAny(text,[
+    "je tenais a vous remercier",
+    "je souhaite vous remercier",
+    "merci beaucoup pour votre",
+    "merci pour votre accompagnement",
+    "merci pour votre professionnalisme",
+    "retour positif",
+    "tres satisfait",
+    "pleinement satisfait",
+    "je suis ravi",
+    "nous sommes ravis",
+    "excellent service",
+    "service excellent",
+    "qualite de service",
+    "qualite de votre accompagnement",
+    "professionnalisme",
+    "travail soigne",
+    "intervention efficace",
+    "resultat conforme",
+    "je recommande"
+  ]))return"Remerciement / retour positif";
+
   return"Demande professionnelle générale";
 }
 
