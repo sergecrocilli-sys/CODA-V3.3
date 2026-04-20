@@ -1,0 +1,11 @@
+{
+  "name": "CODA – Assistant local métier",
+  "short_name": "CODA",
+  "description": "Assistant local métier de préparation de réponses professionnelles, sans connexion mail et sans envoi automatique.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0B1220",
+  "theme_color": "#0B1220",
+  "orientation": "portrait",
+  "icons": [{"src":"icone.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]
+}
