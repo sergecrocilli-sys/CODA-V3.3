@@ -75,7 +75,7 @@ function detectType(subject,body){
 
   if(containsAny(text,["urgence","urgent","douleur","fuite","panne","arret","bloque","incident","sinistre"]))return"Urgence / situation bloquante";
   if(containsAny(text,["incoherence","ecart","erreur","retard","consequence","probleme comptable","rapprochement bancaire"]))return"Réclamation / incohérence administrative";
-  if(containsAny(text,["reclamation","mecontent","litige","insatisfait","pas satisfait","déçu","probleme","mécontent"]))return"Réclamation";
+  if(containsAny(text,["reclamation","litige","insatisfait","pas satisfait","déçu","probleme","mécontent"]))return"Réclamation";
   if(containsAny(text,["devis","offre","prix","tarif","chiffrage","proposition"]))return"Demande de devis";
   if(containsAny(text,["facture","reglement","paiement","relance","comptabilite"]))return"Facturation / administratif";
   if(containsAny(text,["rendez-vous","rendez vous","rdv","creneau","disponibilite"]))return"Rendez-vous / planification";
