@@ -127,6 +127,10 @@ function getMissingInfo(profile,type){
     }
   }
 
+   if(type.includes("Remerciement")){
+    return["Aucune information complémentaire nécessaire","Répondre avec chaleur","Remercier le client pour son retour","Éventuellement l’inviter à laisser un avis"];
+  }
+
   if(type.includes("incohérence")||type.includes("Réclamation / incohérence")){
     return["Écritures ou factures concernées","Écarts constatés","Montants concernés","Période concernée","Pièces justificatives utiles"];
   }
