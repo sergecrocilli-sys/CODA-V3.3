@@ -181,10 +181,11 @@ function renderMissingInfo(items){
 function generateReply(type,priority){
   let core="";
 
-  if(type.includes("Urgence")){
-    core=urgentReplyByProfile(state.profile);
-  }else if(type.includes("incohérence")||type.includes("Réclamation / incohérence")){
-    core=sensitiveAdminReplyByProfile(state.profile);
+ if(type.includes("Remerciement")){
+  core=positiveFeedbackReplyByProfile(state.profile);
+}else if(type.includes("Urgence")){
+  core=urgentReplyByProfile(state.profile);
+}else if(type.includes("incohérence")||type.includes("Réclamation / incohérence")){
   }else if(type.includes("Devis")){
     core="Merci pour votre demande. Je vais analyser les éléments transmis afin de vous apporter une réponse adaptée.\n\nAfin de préparer une proposition pertinente, pouvez-vous me préciser le périmètre exact de votre besoin, le délai souhaité et les éventuelles contraintes à prendre en compte ?";
   }else if(type.includes("Facturation")){
