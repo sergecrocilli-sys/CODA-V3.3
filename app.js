@@ -73,6 +73,34 @@ function containsAny(text,words){
 function detectType(subject,body){
   const text=normalizeText(subject+" "+body);
 
+  if(containsAny(text,[
+  "merci",
+  "remercier",
+  "remerciement",
+  "satisfait",
+  "tres satisfait",
+  "content",
+  "ravi",
+  "excellent",
+  "parfait",
+  "tres bien",
+  "qualite de service",
+  "qualite de votre accompagnement",
+  "professionnalisme",
+  "disponibilite",
+  "reactivite",
+  "patience",
+  "ecoute",
+  "conseil",
+  "accompagnement",
+  "service client",
+  "bon accueil",
+  "travail soigne",
+  "intervention efficace",
+  "resultat conforme",
+  "je recommande"
+]))return"Remerciement / retour positif";
+
   if(containsAny(text,["urgence","urgent","douleur","fuite","panne","arret","bloque","incident","sinistre"]))return"Urgence / situation bloquante";
   if(containsAny(text,["incoherence","ecart","erreur","retard","consequence","probleme comptable","rapprochement bancaire"]))return"Réclamation / incohérence administrative";
   if(containsAny(text,["devis","offre","prix","tarif","chiffrage","proposition"]))return"Demande de devis";
